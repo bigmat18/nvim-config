@@ -10,6 +10,7 @@ treesitter.setup({
     highlight = {
         enable = true,
     },
+    autopairs = { endable = true },
     -- enable indentation
     indent = { enable = true },
     -- enable autotagging (w/ nvim-ts-autotag plugin)
