@@ -5,6 +5,7 @@ require("bigmat.core.colorscheme")
 
 require("bigmat.plugins.treesitter")
 require("bigmat.plugins.lualine")
-require("bigmat.plugins.lsp")
 require("bigmat.plugins.autopairs")
+require("bigmat.plugins.lsp")
+require("bigmat.plugins.null-ls")
 

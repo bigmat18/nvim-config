@@ -16,7 +16,7 @@ opt.expandtab = true
 opt.autoindent = true
 opt.smartindent = true
 
--- opt.colorcolumn = "80"
+opt.colorcolumn = "80"
 
 --line wrapping
 opt.wrap = false
@@ -55,8 +55,8 @@ opt.incsearch = true
 -- better scroll
 opt.scrolloff = 8
 opt.signcolumn = 'yes'
+
 -- faster update time
 opt.updatetime = 50
-
 
 opt.iskeyword:append("-")

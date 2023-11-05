@@ -32,12 +32,9 @@ return packer.startup(function(use)
     use("wbthomason/packer.nvim")
 
     -- preferred colorscheme
-    use("bluz71/vim-nightfly-guicolors")
-    use({
-        "rose-pine/neovim",
-        as = "rose-pine"
-    })
     use("joshdick/onedark.vim")
+
+    use("xiyaowong/transparent.nvim")
 
     -- lua functions that many plugins use
     use("nvim-lua/plenary.nvim")
@@ -45,8 +42,6 @@ return packer.startup(function(use)
     -- Popup API from vim in neovim
     use("nvim-lua/popup.nvim")
     use("nvim-telescope/telescope.nvim")
-
-    -- use("xiyaowong/transparent.nvim")
 
     -- treesitter configuration
     use({
@@ -58,36 +53,45 @@ return packer.startup(function(use)
             ts_update()
         end
     })
-    use("petertriho/nvim-scrollbar") -- implementation of vs-code scrollbar
+    use("petertriho/nvim-scrollbar") -- implementation of vs-code scrollbar with {, }
     use("lukas-reineke/indent-blankline.nvim") -- indentation line and space dots
 
     -- statusline
     use("nvim-lualine/lualine.nvim")
 
-    -- indentation line and space dots
-    use("lukas-reineke/indent-blankline.nvim")
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v1.x',
+        requires = {
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},
+            {'williamboman/mason.nvim'},
+            {'williamboman/mason-lspconfig.nvim'},
 
-    use('VonHeikemen/lsp-zero.nvim')
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},
+            {'hrsh7th/cmp-buffer'},
+            {'hrsh7th/cmp-path'},
+            {'saadparwaiz1/cmp_luasnip'},
+            {'hrsh7th/cmp-nvim-lsp'},
+            {'hrsh7th/cmp-nvim-lua'},
+
+            -- Snippets
+            {'L3MON4D3/LuaSnip'},
+            {'rafamadriz/friendly-snippets'},
+        }
+    }
 
     -- completion
-    use('hrsh7th/nvim-cmp')
-    use('hrsh7th/cmp-nvim-lsp')
-    use('L3MON4D3/LuaSnip')
-    use('saadparwaiz1/cmp_luasnip')
-    use("rafamadriz/friendly-snippets")
-    use("github/copilot.vim")
-    use("williamboman/mason.nvim")
-    use("neovim/nvim-lspconfig")
-    use("williamboman/mason-lspconfig.nvim")
     use("glepnir/lspsaga.nvim")
-
-    use("p00f/clangd_extensions.nvim")
 
     -- formatting & linting
     use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
     use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
     use("windwp/nvim-autopairs")
+
+    use("theprimeagen/harpoon")
 
     if packer_bootstrap then
         require("packer").sync()
