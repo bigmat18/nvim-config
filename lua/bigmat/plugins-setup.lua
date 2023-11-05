@@ -93,6 +93,10 @@ return packer.startup(function(use)
 
     use("theprimeagen/harpoon")
 
+    use("mbbill/undotree")
+
+    use("tpope/vim-fugitive")
+
     if packer_bootstrap then
         require("packer").sync()
     end

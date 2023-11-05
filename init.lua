@@ -8,4 +8,10 @@ require("bigmat.plugins.lualine")
 require("bigmat.plugins.autopairs")
 require("bigmat.plugins.lsp")
 require("bigmat.plugins.null-ls")
+require("bigmat.plugins.harpoon")
+require("bigmat.plugins.undotree")
+require("bigmat.plugins.fugitive")
+
+
+
 
