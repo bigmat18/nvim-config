@@ -33,7 +33,7 @@ return packer.startup(function(use)
 
     -- preferred colorscheme
     use("joshdick/onedark.vim")
-
+    use("ellisonleao/gruvbox.nvim")
     use("xiyaowong/transparent.nvim")
 
     -- lua functions that many plugins use
@@ -90,12 +90,15 @@ return packer.startup(function(use)
     use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
     use("windwp/nvim-autopairs")
-
+    
     use("theprimeagen/harpoon")
 
     use("mbbill/undotree")
 
     use("tpope/vim-fugitive")
+   
+    use("christoomey/vim-tmux-navigator")
+  
 
     if packer_bootstrap then
         require("packer").sync()

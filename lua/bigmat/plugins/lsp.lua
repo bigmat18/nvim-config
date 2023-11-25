@@ -5,7 +5,7 @@ lsp_zero.on_attach(function(client, bufnr)
 
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts) -- go to definition of actual function
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-  vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
+  vim.keymap.set("n", "<leader>ws", function() vim.lsp.buf.workspace_symbol() end, opts)
   vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
   vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
   vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
@@ -13,6 +13,10 @@ lsp_zero.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 's', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+
 end)
 
 require("mason").setup({
@@ -36,7 +40,26 @@ require("lspconfig").pyright.setup({
     filetypes = {"python"}
 })
 
-require("lspconfig").clangd.setup({})
+require("lspconfig").clangd.setup({
+    on_attach = lsp_zero.on_attach,
+    cmd = {
+        "clangd",
+        "--background-index",
+        "--pch-storage=memory",
+        "--all-scopes-completion",
+        "--pretty",
+        "--header-insertion=iwyu",
+        "-j=4",
+        "--inlay-hints",
+        "--header-insertion-decorators",
+        "--function-arg-placeholders",
+        "--completion-style=detailed"
+    },
+    filetypes = {"c", "cpp", "objc", "objcpp"},
+    root_dir = require('lspconfig').util.root_pattern("src"),
+    init_option = { fallbackFlags = {  "-std=c++2a"  } },
+    capabilities = capabilities
+})
 
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
