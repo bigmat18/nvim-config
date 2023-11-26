@@ -224,6 +224,11 @@ _G.packer_plugins = {
     path = "/Users/matteogiu/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
+  ["vim-signify"] = {
+    loaded = true,
+    path = "/Users/matteogiu/.local/share/nvim/site/pack/packer/start/vim-signify",
+    url = "https://github.com/mhinz/vim-signify"
+  },
   ["vim-tmux-navigator"] = {
     loaded = true,
     path = "/Users/matteogiu/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",

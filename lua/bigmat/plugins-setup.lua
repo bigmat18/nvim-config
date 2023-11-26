@@ -96,9 +96,12 @@ return packer.startup(function(use)
     use("mbbill/undotree")
 
     use("tpope/vim-fugitive")
-   
+    
+    -- use('airblade/vim-gitgutter')
+
+    use('mhinz/vim-signify')
+
     use("christoomey/vim-tmux-navigator")
-  
 
     if packer_bootstrap then
         require("packer").sync()
