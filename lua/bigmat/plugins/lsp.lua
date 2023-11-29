@@ -40,26 +40,7 @@ require("lspconfig").pyright.setup({
     filetypes = {"python"}
 })
 
-require("lspconfig").clangd.setup({
-    on_attach = lsp_zero.on_attach,
-    cmd = {
-        "clangd",
-        "--background-index",
-        "--pch-storage=memory",
-        "--all-scopes-completion",
-        "--pretty",
-        "--header-insertion=iwyu",
-        "-j=4",
-        "--inlay-hints",
-        "--header-insertion-decorators",
-        "--function-arg-placeholders",
-        "--completion-style=detailed"
-    },
-    filetypes = {"c", "cpp", "objc", "objcpp"},
-    root_dir = require('lspconfig').util.root_pattern("src"),
-    init_option = { fallbackFlags = {  "-std=c++2a"  } },
-    capabilities = capabilities
-})
+require("lspconfig").clangd.setup({})
 
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
