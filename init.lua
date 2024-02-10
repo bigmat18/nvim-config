@@ -11,6 +11,8 @@ require("bigmat.plugins.null-ls")
 require("bigmat.plugins.harpoon")
 require("bigmat.plugins.undotree")
 require("bigmat.plugins.fugitive")
+require("bigmat.plugins.nvim-tree")
+
 
 
 

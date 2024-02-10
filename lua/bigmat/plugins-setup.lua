@@ -103,6 +103,19 @@ return packer.startup(function(use)
 
     use("christoomey/vim-tmux-navigator")
 
+    use("nvim-tree/nvim-tree.lua")
+
+    use({"folke/todo-comments.nvim",
+         dependencies = { "nvim-lua/plenary.nvim" },
+         opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        }
+    })
+ 
+    -- vs-code like icons
+    use("nvim-tree/nvim-web-devicons")
     if packer_bootstrap then
         require("packer").sync()
     end

@@ -58,3 +58,9 @@ vim.keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 -- increment/decrement numbers
 vim.keymap.set("n", "<leader>+", "<C-a>") -- increment
 vim.keymap.set("n", "<leader>-", "<C-x>") -- decrement
+
+-- vim-maximizer
+vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
+
+-- nvim-tree
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explor
