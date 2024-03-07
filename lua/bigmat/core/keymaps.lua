@@ -1,5 +1,11 @@
 vim.g.mapleader = ' '
 
+vim.keymap.set("n", "j", "k")
+vim.keymap.set("n", "k", "j")
+
+vim.keymap.set("n", "ll", "$")
+vim.keymap.set("n", "hh", "0")
+
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- exit from insert mode
