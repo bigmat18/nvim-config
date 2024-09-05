@@ -3,8 +3,11 @@ vim.g.mapleader = ' '
 vim.keymap.set("n", "j", "k")
 vim.keymap.set("n", "k", "j")
 
-vim.keymap.set("n", "ll", "$")
-vim.keymap.set("n", "hh", "0")
+vim.keymap.set("v", "j", "k")
+vim.keymap.set("v", "k", "j")
+
+vim.keymap.set("v", "ll", "$")
+vim.keymap.set("v", "hh", "0")
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
@@ -12,8 +15,8 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("i", "jk", "<ESC>")
 
 -- mov up and down the section selected
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '<-2<CR>gv=gv")
 
 -- mov when search something
 vim.keymap.set("n", "n", "nzzzv")
@@ -33,7 +36,7 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
-vim.keymap.set("n", "<leader>s", "<cmd>w<CR>", { noremap = true})
+vim.keymap.set("n", "<leader>s", "<cmd>wa<CR>", { noremap = true})
 vim.keymap.set("n", "<leader>r", "<cmd>bufdo e!<CR>")
 vim.keymap.set("n", "<leader>c", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })

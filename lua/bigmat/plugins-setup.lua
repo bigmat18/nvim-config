@@ -105,6 +105,8 @@ return packer.startup(function(use)
 
     use("nvim-tree/nvim-tree.lua")
 
+    use("preservim/nerdcommenter")
+
     use({"folke/todo-comments.nvim",
          dependencies = { "nvim-lua/plenary.nvim" },
          opts = {
