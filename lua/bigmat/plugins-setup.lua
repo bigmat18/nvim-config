@@ -115,8 +115,6 @@ return packer.startup(function(use)
             -- refer to the configuration section below
         }
     })
-
-    use("xiyaowong/transparent.nvim")
  
     -- vs-code like icons
     use("nvim-tree/nvim-web-devicons")
