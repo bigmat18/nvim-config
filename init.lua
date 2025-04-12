@@ -1,7 +1,14 @@
-require("bigmat.core.options")
-require("bigmat.core.keymaps")
-require("bigmat.core.colorscheme")
+require("core.plugins-setup")
+require("core.options")
+require("core.keymaps")
+require("core.colorscheme")
 
-
-
-
+require("plugins.treesitter")
+require("plugins.lualine")
+require("plugins.autopairs")
+require("plugins.lsp")
+require("plugins.null-ls")
+require("plugins.harpoon")
+require("plugins.undotree")
+require("plugins.fugitive")
+require("plugins.nvim-tree")
