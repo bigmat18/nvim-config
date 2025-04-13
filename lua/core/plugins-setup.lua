@@ -34,7 +34,6 @@ return packer.startup(function(use)
     -- preferred colorscheme
     use("joshdick/onedark.vim")
     use("ellisonleao/gruvbox.nvim")
-    use("xiyaowong/transparent.nvim")
 
     -- lua functions that many plugins use
     use("nvim-lua/plenary.nvim")
@@ -85,36 +84,15 @@ return packer.startup(function(use)
     -- completion
     use("glepnir/lspsaga.nvim")
 
-    -- formatting & linting
-    use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
-    use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
-
     use("windwp/nvim-autopairs")
     
     use("theprimeagen/harpoon")
-
-    use("mbbill/undotree")
-
-    use("tpope/vim-fugitive")
     
-    -- use('airblade/vim-gitgutter')
-
     use('mhinz/vim-signify')
 
     use("christoomey/vim-tmux-navigator")
 
     use("nvim-tree/nvim-tree.lua")
-
-    use("preservim/nerdcommenter")
-
-    use({"folke/todo-comments.nvim",
-         dependencies = { "nvim-lua/plenary.nvim" },
-         opts = {
-            -- your configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
-        }
-    })
  
     -- vs-code like icons
     use("nvim-tree/nvim-web-devicons")
