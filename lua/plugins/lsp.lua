@@ -24,10 +24,9 @@ end)
 -- Inizializza Mason e configura LSP con i server necessari
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "clangd", "cmake", "lua_ls" },  -- Aggiungi altri server LSP che ti servono
+    ensure_installed = { "clangd", "cmake", "lua_ls" },
 })
 
--- Configurazione del server clangd (C, C++ e CMake)
 require("lspconfig").clangd.setup({
     on_attach = function(client, bufnr)
         lsp_zero.on_attach(client, bufnr)
@@ -38,34 +37,25 @@ require("lspconfig").clangd.setup({
             update_in_insert = false,
         })
     end,
-    capabilities = require('cmp_nvim_lsp').default_capabilities(),
-    cmd = {
-        "clangd", -- Ora troverà /nix/store/.../clangd messo nel PATH da shell.nix
-        "--compile-commands-dir=build",
-        "--query-driver=gcc,clang" -- Necessario per gli include di sistema
-    },
-    root_dir = require('lspconfig.util').root_pattern("compile_commands.json", ".git"),
 })
 
--- Altri server LSP configurabili (esempio per Lua)
 require("lspconfig").lua_ls.setup({
     on_attach = lsp_zero.on_attach,
     capabilities = lsp_zero.capabilities,
     settings = {
         Lua = {
             diagnostics = {
-                globals = { "vim" },  -- Aggiungi variabili globali per Lua (ad esempio "vim")
+                globals = { "vim" },
             },
         },
     },
 })
 
--- Configurazione per il server CMake
 require("lspconfig").cmake.setup({
     on_attach = lsp_zero.on_attach,
     capabilities = lsp_zero.capabilities,
     init_options = {
-        buildDirectory = "./build",  -- Percorso della directory di build
+        buildDirectory = "./build",
     },
 })
 
